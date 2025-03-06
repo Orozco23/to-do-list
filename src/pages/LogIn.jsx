@@ -9,11 +9,17 @@ function LogIn() {
     <div className='login-card'>
       <Title />
       <InputText 
-        placeholder = 'Email'
+        type='email'
+        placeholder='Email'
+        name='email'
+        id='email'
       />
       <Button 
-        text = 'Log In'
-        color = 'secondary-background' 
+        type='submit'
+        text='Log In'
+        color='secondary-background' 
+        name='login'
+        id='login'
       />
     </div>
   )

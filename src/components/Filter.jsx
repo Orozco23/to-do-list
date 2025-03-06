@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Tooltip } from "react-tooltip"
 
 export default function Filter() {
     const options = [
@@ -19,18 +20,33 @@ export default function Filter() {
     return (
         <div className="div-filter">
             <div onClick={toggleDropdown}>
-                <span role="icon" label="filter"><i className="bi bi-funnel secondary-color icon-large"/></span>
+                <span role="icon" label="filter">
+                    <i 
+                        className="bi bi-funnel secondary-color icon-large"
+                        data-tooltip-id="option"
+                        data-tooltip-content="Filter"
+                    />
+                </span>
             </div>
 
             {isOpen && (
                 <ul className="filter-selector">
                     {
                         options.map((option, index) =>
-                            <li key={index} onClick={() => handleSelect(option.value)} name={option.value}>{option.icon}</li>
+                            <li 
+                                key={index} 
+                                onClick={() => handleSelect(option.value)} 
+                                name={option.value}
+                                data-tooltip-id="option"
+                                data-tooltip-content={option.value}
+                            >
+                                {option.icon}
+                            </li>
                         )
                     }
                 </ul>
             )}
+            <Tooltip id="option" />
         </div>
     )
 }

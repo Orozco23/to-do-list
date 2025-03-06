@@ -6,8 +6,8 @@ export default function List({ tasks }) {
         <Item
             key={index}
             color={colors[index % 2]}
-            status={task.status}
-            text={task.text}
+            is_completed={task.is_completed}
+            title={task.title}
         />);
 
     return (

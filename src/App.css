@@ -180,6 +180,7 @@
   margin: 1em;  
   font-size: 1em;
   color: #2A2A2A;
+  min-height: 3.4em;
 }
 
 .to-do h4 {
@@ -257,6 +258,7 @@
   text-align: left;
   margin: 1em auto;
   padding: 0 1em;
+  min-height: 3em;
 }
 
 .description {
@@ -267,4 +269,5 @@
   text-align: left;
   margin: 1em auto;
   padding: 0 1em;
+  min-height: 15em;
 }

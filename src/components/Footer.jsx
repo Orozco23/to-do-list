@@ -2,7 +2,7 @@ import { Tooltip } from 'react-tooltip'
 import { useState } from "react";
 import ModalCreate from './ModalCreate';
 
-export default function Footer() {
+export default function Footer({ setUpdate }) {
     const [isOpen, setIsOpen] = useState(false);
     
     const toggleModal = () => setIsOpen(!isOpen)
@@ -29,6 +29,7 @@ export default function Footer() {
             <ModalCreate
                 isOpen={isOpen}
                 toggleModal={toggleModal}
+                setUpdate={setUpdate}
             />
         </footer>
     )

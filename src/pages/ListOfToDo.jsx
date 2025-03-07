@@ -1,26 +1,52 @@
+import { useEffect, useState } from "react"
 import Footer from "../components/Footer"
 import Header from "../components/header"
 import List from "../components/List"
 import LogOut from "../components/LogOut"
+import { getList } from "../fetch/Task.fetch"
+import useStore from "../store/useStore"
 
 export default function ListOfToDo() {
-    const tasks = [
-        {title: 'do la sol', is_completed: false},
-        {title: 'finish', is_completed: true},
-        {title: '0123456789 0123456789 0123456789 0123456789 012345', is_completed: true},
-        {title: 'buy', is_completed: false},
-        {title: 'abcde fghijk lmno pqrstu vwxyz', is_completed: false},
-        {title: 'abcdef ghij klmnop qrst uvwxyz', is_completed: true}
-    ]
+
+    const { token } = useStore()
+
+    const [tasks, setTasks] = useState([])
+    const [update, isUpdate] = useState(false)
+
+    const setUpdate = () => isUpdate(!update)
+
+    useEffect(() =>{
+        const getTasks = async () => {
+            try {
+                let response = await getList({
+                    token,
+                    limit: 5,
+                    order: '-created_at',
+                    page: 1
+                })
+                setTasks(response.data)
+            } catch (error) {
+                console.error('Status', error.status)
+            }
+        }
+
+        if (token) {
+            getTasks()
+        }
+    },[token, update])
+
 
     return (
         <>
             <LogOut />
             <Header />
             <List 
-                tasks = {tasks}
+                tasks={tasks}
+                setUpdate={setUpdate}
             />
-            <Footer />
+            <Footer 
+                setUpdate={setUpdate}
+            />
         </>
     )
 }

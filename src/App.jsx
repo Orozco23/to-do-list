@@ -1,15 +1,13 @@
 import './App.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import LogIn from './pages/LogIn';
-import ListOfToDo from './pages/ListOfToDo';
+import Base from './routes/Base';
 
 
 function App() {
 
   return (
     <>
-      <LogIn />
-      <ListOfToDo />
+      <Base />
     </>
   )
 }

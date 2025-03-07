@@ -4,11 +4,13 @@ import InputText from '../components/InputText';
 import { logIn } from '../fetch/LogIn.fetch';
 import { useState } from 'react';
 import useStore from '../store/useStore';
+import { useNavigate } from 'react-router-dom';
 
 
 function LogIn() {
 
   const { updateToken, updateUserEmail } = useStore()
+  const navigate = useNavigate()
 
   const [email, setEmail] = useState('')
 
@@ -20,6 +22,7 @@ function LogIn() {
             let response = await logIn(email)
             updateToken(response.data.token)
             updateUserEmail(email)
+            navigate('/to-do')
         } catch (error) {
             console.error('Status', error.status)
         }

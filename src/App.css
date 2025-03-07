@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 85%;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* login */
+.login-card {
+  min-height: 35em;
+  max-width: 30em;
+  margin: 3em auto;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  padding: 0em 0em 2em 3.3em;
+}
+
+.card p {
+  font-family: "Bebas Neue", sans-serif;
+  text-align: left;
+  font-size: 3em;
+  letter-spacing: 1em;
+  margin: 1em;
+}
+
+.card p i {
+  padding-left: 0.7em;
+}
+
+.card button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* icon size */
+.icon-larger {
+  font-size: 3.5em;
+}
+
+.icon-large {
+  font-size: 3em;
+}
+
+.icon-medium {
+  font-size: 2em;
+}
+
+.icon-small-square {
+  font-size: 1.7em;
+}
+
+.icon-small {
+  font-size: 1.4em;
+}
+
+/* icon color */
+.primary-color {
+  color: #F79E89;
+}
+
+.secondary-color {
+  color: #F76C6A;
+}
+
+.text-color {
+  color: #27272727;
+}
+
+.background-color {
+  color: #F0F0F0;
+}
+
+.create {
+  cursor: pointer;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.create:hover {
+  filter: drop-shadow(0 0 0.4em #e6403d);
+}
+
+/* background */
+.primary-background {
+  background-color: #F79E89;
+}
+
+.secondary-background {
+  background-color: #F76C6A;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 5px;
+  grid-auto-rows: auto;
+  place-content: center;
+  padding: 0 2em;
+}
+
+.grid h2 {
+  margin: 0;
+  text-align: left;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  place-content: center;
+  font-size: 2.5em ;
+}
+
+.grid i {
+  cursor: pointer;
+  text-align: right;
+}
+
+/* list */
+.item {
+  padding: 1em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.strike-out {
+  text-decoration: line-through;
+}
+
+.list-card {
+  min-height: 35em;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0 2em;
+  margin: 1em auto;
+}
+
+.to-do {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 1fr;
+  gap: 5px;
+  grid-auto-rows: auto;
+  place-content: center;
+
+  border-radius: 8px;
+  margin: 1em;  
+  font-size: 1em;
+  color: #2A2A2A;
+  min-height: 3.4em;
+}
+
+.to-do h4 {
+  margin: 0;
+  text-align: left;
+  place-content: center;
+}
+
+.to-do i {
+  cursor: pointer;
+  place-content: center;
+}
+
+/* filter */
+.div-filter {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-selector {
+  position: absolute;
+  top: 3.5em;
+  left: -1.5em;
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  background-color: #585858;
+  box-shadow: 0px 4px 8px #404040;
+  width: 9em;
+}
+
+.filter-selector li {
+  cursor: pointer;
+  text-align: left;
+}
+
+/* fonts */
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-uniquifier {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* modal */
+.modal-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background-color: #F79E89;
+  padding: 2em;
+  border: solid;
+  border-color: #2A2A2A;
+  border-radius: 1em;
+  border-width: 5px;
+  box-shadow: 0px 1px 15px #000;
+  min-width: 55vh;
+  min-height: 65vh;
+  z-index: 1;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.4em;
+  color: #2A2A2A;
+  text-align: left;
+  margin: 1em auto;
+  padding: 0 1em;
+  min-height: 3em;
+}
+
+.description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #2A2A2A;
+  text-align: left;
+  margin: 1em auto;
+  padding: 0 1em;
+  min-height: 15em;
+}

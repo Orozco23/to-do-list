@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  font-family: "Montserrat", "Bebas Neue", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #404040;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.2em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #2A2A2A;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 1em 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+button:hover {
+  border-color: #f75350;
+}
+button:focus,
+button:focus-visible {
+  outline: 10px auto -webkit-focus-ring-color;
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.2em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: #f0f0f0;
+  color: #2A2A2A;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 1em 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+input:hover {
+  border-color: #f0f0f0;
+}
+input:focus,
+input:focus-visible {
+  outline: 10px auto -webkit-focus-ring-color;
+}
+
+textarea {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.5em;
+  font-size: 1.2em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: #f0f0f0;
+  color: #2A2A2A;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-top: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  resize: none;
+}
+textarea:hover {
+  border-color: #f0f0f0;
+}
+textarea:focus,
+textarea:focus-visible {
+  outline: 10px auto -webkit-focus-ring-color;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #F76C6A;
+  outline: 1px solid #9e9e9e;
+  border-radius: 16px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 5px;
+  grid-auto-rows: auto;
+  place-content: center;
+}
+
+header h1 {
+  margin: 0;
+  place-content: center;
+  text-align: left;
+}
+
+div span {
+  cursor: pointer;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 5fr;
+  gap: 5px;
+  grid-auto-rows: auto;
+  padding: 0 1.5em;
+}
+
+footer .right {
+  text-align: right;
+  padding-right: 1em;
+}
+
+footer h4 {
+  place-content: center;
+  color: #F79E89;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

@@ -20,7 +20,7 @@ You can log in with your email and the tasks will be associated with your email 
 * [**FILE STRUCTURE**](#file-structure)
     > Define the structure
 
-* [**Endpoints**](#endpoints)
+* [**ENDPOINTS**](#endpoints)
     > Define the endpoints
 
 

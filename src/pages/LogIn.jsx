@@ -5,7 +5,7 @@ import { logIn } from '../fetch/LogIn.fetch';
 import { useState } from 'react';
 import useStore from '../store/useStore';
 import { useNavigate } from 'react-router-dom';
-
+import Swal from 'sweetalert2'
 
 function LogIn() {
 
@@ -27,7 +27,16 @@ function LogIn() {
             console.error('Status', error.status)
         }
     } else {
-        console.error('invalid email')
+        Swal.fire({
+          title: 'Error!',
+          text: 'Invalid email',
+          icon: 'error',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#F76C6A',
+          background: '#2A2A2A',
+          color: '#F79E89',
+          iconColor: '#F76C6A'
+        })
     }
   }
 

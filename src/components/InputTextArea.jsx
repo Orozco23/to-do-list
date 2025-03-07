@@ -1,11 +1,12 @@
-export default function InputTextArea({ maxlength, rows, placeholder, name, id }) {
+export default function InputTextArea({ maxlength, rows, placeholder, id, onChange }) {
     return (
         <textarea 
             maxlength={maxlength} 
             rows={rows}
             placeholder={placeholder}
-            name={name}
+            name={id}
             id={id}
+            onChange={onChange}
         ></textarea>
     )
 }

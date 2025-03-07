@@ -2,7 +2,7 @@ import { Tooltip } from 'react-tooltip'
 import { useState } from "react";
 import ModalCreate from './ModalCreate';
 
-export default function Footer() {
+export default function Footer({ setUpdate, next, previous, pages }) {
     const [isOpen, setIsOpen] = useState(false);
     
     const toggleModal = () => setIsOpen(!isOpen)
@@ -13,11 +13,14 @@ export default function Footer() {
                 className="bi bi-caret-left icon-larger secondary-color"
                 data-tooltip-id="create"
                 data-tooltip-content="Previous"
+                onClick={previous}
             />
+            <h4>{pages}</h4>
             <i 
                 className="bi bi-caret-right icon-larger secondary-color"
                 data-tooltip-id="create"
                 data-tooltip-content="Next"
+                onClick={next}
             />             
             <i 
                 data-tooltip-id="create"
@@ -29,6 +32,7 @@ export default function Footer() {
             <ModalCreate
                 isOpen={isOpen}
                 toggleModal={toggleModal}
+                setUpdate={setUpdate}
             />
         </footer>
     )

@@ -106,6 +106,16 @@ textarea:focus-visible {
   outline: 10px auto -webkit-focus-ring-color;
 }
 
+textarea::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #F76C6A;
+  outline: 1px solid #9e9e9e;
+  border-radius: 16px;
+}
+
 header {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
@@ -126,14 +136,20 @@ div span {
 
 footer {
   display: grid;
-  grid-template-columns: 2fr 2fr 5fr;
+  grid-template-columns: 2fr 1fr 2fr 5fr;
   gap: 5px;
   grid-auto-rows: auto;
+  padding: 0 1.5em;
 }
 
 footer .right {
   text-align: right;
-  padding-right: 1.5em;
+  padding-right: 1em;
+}
+
+footer h4 {
+  place-content: center;
+  color: #F79E89;
 }
 
 

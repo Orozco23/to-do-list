@@ -1,21 +1,20 @@
 import { useState } from "react"
 import { Tooltip } from "react-tooltip"
 
-export default function Filter() {
+export default function Filter({ filterTasks }) {
     const options = [
-        {icon: <i className="bi bi-trash2 icon-medium primary-color"/>, value: 'created_at'},
-        {icon: <i className="bi bi-pencil icon-medium"/>, value: 'title'},
-        {icon: <i className="bi bi-trash3 icon-medium primary-color"/>, value: 'is_completed'}
+        {icon: <i className="bi bi-arrow-down"/>, value: '-created_at', label: ' created at'},
+        {icon: <i className="bi bi-arrow-up"/>, value: 'created_at', label: ' created at'},
+        {icon: <i className="bi bi-arrow-down"/>, value: '-title', label: ' title'},
+        {icon: <i className="bi bi-arrow-up"/>, value: 'title', label: ' title'},
+        {icon: <i className="bi bi-x"/>, value: 'is_completed', label: "isn't completed"},
+        {icon: <i className="bi bi-check"/>, value: '-is_completed', label: 'is completed'}
     ]
+    const colors = [ 'primary-color', 'secondary-color' ]
+
     const [isOpen, setIsOpen] = useState(false)
-    const [selectedOption, setSelectedOption] = useState('All')
 
     const toggleDropdown = () => setIsOpen(!isOpen)
-
-    const handleSelect = (option) => {
-        setSelectedOption(option)
-        setIsOpen(false)
-    }
 
     return (
         <div className="div-filter">
@@ -35,12 +34,14 @@ export default function Filter() {
                         options.map((option, index) =>
                             <li 
                                 key={index} 
-                                onClick={() => handleSelect(option.value)} 
+                                className={colors[index % 2]}
+                                onClick={() => {
+                                    filterTasks(option.value)
+                                    setIsOpen(false)
+                                }}
                                 name={option.value}
-                                data-tooltip-id="option"
-                                data-tooltip-content={option.value}
                             >
-                                {option.icon}
+                                {option.icon}{option.label}
                             </li>
                         )
                     }

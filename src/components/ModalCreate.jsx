@@ -3,6 +3,7 @@ import useStore from "../store/useStore";
 import Button from "./Button";
 import InputTextArea from "./InputTextArea";
 import { createTask } from "../fetch/Task.fetch";
+import Swal from "sweetalert2";
 
 export default function ModalCreate({ isOpen, toggleModal, setUpdate }) {
     const { user_email, token } = useStore()
@@ -30,7 +31,16 @@ export default function ModalCreate({ isOpen, toggleModal, setUpdate }) {
                 console.error('Status', error.status)
             }
         } else {
-            console.error('The title field may not be blank.')
+            Swal.fire({
+                title: 'Error!',
+                text: 'The title may not be blank',
+                icon: 'error',
+                confirmButtonText: 'Ok',
+                confirmButtonColor: '#F76C6A',
+                background: '#2A2A2A',
+                color: '#F79E89',
+                iconColor: '#F76C6A'
+            })
         }
     }
 

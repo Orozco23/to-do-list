@@ -3,6 +3,7 @@ import { Tooltip } from "react-tooltip"
 import ModalRead from "./ModalRead"
 import { deleteTask, updateTask } from "../fetch/Task.fetch"
 import useStore from "../store/useStore"
+import Swal from "sweetalert2"
 
 export default function Item({ color, is_completed, id, title, description, created_at, setUpdate }) {
     const icons = ["bi bi-square icon-small-square", "bi bi-check2-square icon-medium"]
@@ -26,12 +27,40 @@ export default function Item({ color, is_completed, id, title, description, crea
         }
     }
 
+    const confirmDelete = () => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#F76C6A',
+            cancelButtonColor: '#F79E89',
+            background: '#2A2A2A',
+            color: '#F79E89',
+            iconColor: '#F76C6A',
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                deleteItem()
+            }
+          })
+    }
+
     const deleteItem = async () => {
         try {
             await deleteTask({
                 token,
                 id
             })
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your task has been deleted.",
+                icon: "success",
+                confirmButtonColor: "#F76C6A",
+                background: '#2A2A2A',
+                color: '#F79E89',
+                iconColor: '#F76C6A'
+              })
             setUpdate()
         } catch (error) {
             console.error('Status', error.status)
@@ -57,7 +86,7 @@ export default function Item({ color, is_completed, id, title, description, crea
                 className="bi bi-trash3 icon-small"
                 data-tooltip-id="option"
                 data-tooltip-content="Delete task"
-                onClick={deleteItem}
+                onClick={confirmDelete}
             />
             <Tooltip id="option" />
             <ModalRead 

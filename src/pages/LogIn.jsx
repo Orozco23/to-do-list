@@ -3,21 +3,25 @@ import Button from '../components/Button';
 import InputText from '../components/InputText';
 import { logIn } from '../fetch/LogIn.fetch';
 import { useState } from 'react';
+import useStore from '../store/useStore';
 
 
 function LogIn() {
+
+  const { updateToken, updateUserEmail } = useStore()
 
   const [email, setEmail] = useState('')
 
   const changeEmail = (e) => setEmail(e.target.value)
 
-  const enter = async () => {
+  const handleLogin = async () => {
     if (validateEmail()) {
         try {
             let response = await logIn(email)
-            console.log(response.data.token)
+            updateToken(response.data.token)
+            updateUserEmail(email)
         } catch (error) {
-            console.log('Status', error.status)
+            console.error('Status', error.status)
         }
     } else {
         console.error('invalid email')
@@ -45,7 +49,7 @@ function LogIn() {
         color='secondary-background' 
         name='login'
         id='login'
-        event={enter}
+        event={handleLogin}
       />
     </div>
   )

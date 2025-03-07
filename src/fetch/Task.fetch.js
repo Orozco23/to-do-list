@@ -1,8 +1,7 @@
 const apiUrl = import.meta.env.VITE_API_BASE_URL
-const user_email = 'correos@prueba.com'
 
 // create a task
-export const createTask = async ({ token, description, title }) => {
+export const createTask = async ({ user_email, token, description, title }) => {
     try {
         const response = await fetch(
             `${apiUrl}tasks/create`,

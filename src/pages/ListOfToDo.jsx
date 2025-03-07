@@ -35,11 +35,26 @@ export default function ListOfToDo() {
         }
     },[token, update])
 
+    const filterTasks = async (order) => {
+        try {
+            let response = await getList({
+                token,
+                limit: 5,
+                order,
+                page: 1
+            })
+            setTasks(response.data)
+        } catch (error) {
+            console.error('Status', error.status)
+        }
+    }
 
     return (
         <>
             <LogOut />
-            <Header />
+            <Header
+                filterTasks={filterTasks}
+            />
             <List 
                 tasks={tasks}
                 setUpdate={setUpdate}
